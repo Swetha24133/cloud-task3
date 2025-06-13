@@ -54,3 +54,7 @@ To enable public read access (for demonstration only), set your Firebase rules a
     ".write": false
   }
 }
+
+##OUTPUT
+
+
