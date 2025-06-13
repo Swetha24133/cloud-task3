@@ -43,18 +43,6 @@ Ensure this endpoint is accessible publicly by updating your Firebase database r
 3. The Firebase backend responds with a message.
 4. The frontend dynamically displays the message on the page.
 
-## 🔒 Firebase Security Rules
-
-To enable public read access (for demonstration only), set your Firebase rules as:
-
-```json
-{
-  "rules": {
-    ".read": true,
-    ".write": false
-  }
-}
-
 ##OUTPUT
 
 ![Image](https://github.com/user-attachments/assets/85e28936-cc6d-4a58-ba0b-b606daad1320)
