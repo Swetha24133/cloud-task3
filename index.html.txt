@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud Task 3 - Multi-Cloud Architecture</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f5f9;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #0f172a;
+    }
+    p {
+      color: #334155;
+      font-size: 18px;
+    }
+    .message-box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>✅ Multi-Cloud Architecture Demo</h1>
+  <p>This project shows how services interact across two cloud platforms using Firebase as backend.</p>
+
+  <div class="message-box">
+    <h3>Message from Firebase:</h3>
+    <p id="firebaseMessage">Loading...</p>
+  </div>
+
+  <script>
+    async function fetchMessage() {
+      try {
+        const response = await fetch("https://cloud-backend-task3-default-rtdb.firebaseio.com/message.json");
+        if (!response.ok) throw new Error("Network response was not ok");
+        const data = await response.json();
+        document.getElementById("firebaseMessage").innerText = data;
+      } catch (error) {
+        document.getElementById("firebaseMessage").innerText = "Error fetching message.";
+        console.error("Error:", error);
+      }
+    }
+
+    window.onload = fetchMessage;
+  </script>
+</body>
+</html>
